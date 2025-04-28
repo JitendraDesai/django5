@@ -1,0 +1,85 @@
+{#% extends "base.html" %#}
+{% include "partial/header.html" %}
+{% block content %}
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 2rem;
+    }
+
+    .car-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .car-item {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .car-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .car-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .car-info {
+      padding: 1.5rem;
+    }
+
+    .car-title {
+      font-size: 1.6rem;
+      color: #333;
+      margin: 0;
+    }
+
+    .car-model {
+      font-size: 1.2rem;
+      color: #666;
+      margin: 0.5rem 0;
+    }
+
+    .car-price {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #4F46E5;
+    }
+
+  </style>
+
+<body>
+
+  <section class="car-grid">
+
+    <!-- Car 1 -->
+    {% for car in cars %}
+    <a href="{% url 'car' car.id %}">
+    <div class="car-item">
+      <img src="{{car.image}}" alt="Car 1" class="car-image">
+      <div class="car-info">
+        <h3 class="car-title">{{car.make}}</h3>
+        <p class="car-model">{{car.model}}</p>
+        <p class="car-model">{{car.available}}</p>
+        <p class="car-price">$79,990</p>
+      </div>
+    </div>
+  </a>
+    {% endfor %}
+</section>
+
+</body>
+
+{% endblock  %}
+{% include "partial/footer.html" %}

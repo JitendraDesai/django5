@@ -1,0 +1,50 @@
+{#% extends "base.html" %#}
+{% include "partial/header.html" %}
+{% block content %}
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    .about-container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .about-container h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #0056b3;
+    }
+    .about-container p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .about-container img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+  </style>
+
+<body>
+
+<div class="about-container">
+  <h1>About Us</h1>
+  <p>Welcome to our company! We are dedicated to providing the best solutions to help you grow and succeed. Our team is passionate, innovative, and committed to excellence in everything we do.</p>
+  
+  <p>Founded in 2020, our mission has always been to create impact and build meaningful relationships with our clients. We believe in the power of collaboration, creativity, and hard work.</p>
+</div>
+
+</body>
+
+{% endblock  %}
+{% include "partial/footer.html" %}

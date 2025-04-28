@@ -1,0 +1,83 @@
+{#% extends "base.html" %#}
+{% include "partial/header.html" %}
+{% block content  %}
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background-color: #f0f2f5;
+      color: #333;
+    }
+    .contact-container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    .contact-container h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #0077cc;
+      text-align: center;
+    }
+    .contact-container form {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-container label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .contact-container input,
+    .contact-container textarea {
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    .contact-container textarea {
+      resize: vertical;
+      min-height: 150px;
+    }
+    .contact-container button {
+      background-color: #0077cc;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    .contact-container button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+
+<body>
+
+<div class="contact-container">
+  <h1>Contact Us</h1>
+  <form action="#" method="POST">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your name..." required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Your email..." required>
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</div>
+
+</body>
+
+{% endblock  %}
+{% include "partial/footer.html" %}
